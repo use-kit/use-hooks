@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest'
+import { useAge } from '.'
 
 describe('should', () => {
   it('exported', () => {
-    expect(1).toEqual(1)
+    expect(useAge('1997-09-28')).toMatchInlineSnapshot('24')
   })
 })

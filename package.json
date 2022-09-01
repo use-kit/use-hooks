@@ -42,9 +42,12 @@
     "lint": "eslint .",
     "prepublishOnly": "nr build",
     "release": "bumpp && npm publish",
-    "start": "esno src/index.ts",
+    "start": "esno packages/index.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.26.1",
