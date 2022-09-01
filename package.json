@@ -1,5 +1,5 @@
 {
-  "name": "pkg-name",
+  "name": "use-hooks",
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@7.9.0",
@@ -7,12 +7,12 @@
   "author": "Akashi Sai <akashi_sai@163.com>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/akashigakki",
-  "homepage": "https://github.com/akashigakki/pkg-name#readme",
+  "homepage": "https://github.com/akashigakki/use-hooks#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/akashigakki/pkg-name.git"
+    "url": "git+https://github.com/akashigakki/use-hooks.git"
   },
-  "bugs": "https://github.com/akashigakki/pkg-name/issues",
+  "bugs": "https://github.com/akashigakki/use-hooks/issues",
   "keywords": [],
   "sideEffects": false,
   "exports": {
