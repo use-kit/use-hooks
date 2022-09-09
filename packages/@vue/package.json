@@ -1,0 +1,53 @@
+{
+  "name": "@use-kit/vue-hooks",
+  "type": "module",
+  "version": "0.0.1-beta.0",
+  "packageManager": "pnpm@7.9.0",
+  "description": "",
+  "author": "Akashi Sai <akashi_sai@163.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/akashigakki",
+  "homepage": "https://github.com/use-kit/use-hooks#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/use-kit/use-hooks.git"
+  },
+  "bugs": "https://github.com/use-kit/use-hooks/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "prepublishOnly": "nr build",
+    "release": "bumpp && npm publish",
+    "start": "esno packages/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.5",
+    "vue": "^3.2.39"
+  }
+}
