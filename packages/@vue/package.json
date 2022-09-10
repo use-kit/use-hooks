@@ -49,5 +49,8 @@
   "dependencies": {
     "dayjs": "^1.11.5",
     "vue": "^3.2.39"
+  },
+  "devDependencies": {
+    "@vueuse/core": "^9.2.0"
   }
 }
