@@ -1,4 +1,4 @@
-import { computed, ref, watch, watchEffect, onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 
 export const useTime = () => {
   const now = ref(new Date())
