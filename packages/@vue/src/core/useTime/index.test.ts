@@ -4,7 +4,7 @@ import { useTime } from '.'
 
 describe('should', () => {
   it('expect', () => {
-    const date = unref(useTime()).toString().split(' ')[3] // year
-    expect(date).toEqual((new Date()).getFullYear().toString())
+    const date = unref(useTime()).toString().split(' ')[3]  // year
+    expect(date).toEqual((new Date).getFullYear().toString())
   })
 })
