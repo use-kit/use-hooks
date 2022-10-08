@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { useApi } from '.'
+import { useRequest } from '.'
 
 function fetchList() {
   return new Promise(resolve => setTimeout(() => resolve([1, 2, 3]), 1000))
@@ -7,7 +7,7 @@ function fetchList() {
 
 describe('should', () => {
   it('expect', () => {
-    const { result } = useApi(fetchList)
+    const { result } = useRequest(fetchList)
     expect(result.value).toMatchInlineSnapshot('null')
   })
 })
