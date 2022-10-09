@@ -6,7 +6,7 @@ function fetchList() {
 }
 
 describe('should', () => {
-  it('expect', () => {
+  it.skip('expect', () => {
     const { result } = useRequest(fetchList)
     expect(result.value).toMatchInlineSnapshot('null')
   })

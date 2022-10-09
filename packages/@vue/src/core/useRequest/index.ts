@@ -1,11 +1,11 @@
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
-export const useRequest = (api: any) => {
+export const useRequest = (api: any, params?: any) => {
   const loading = ref(false)
   const result = ref(null)
   const error = ref(null)
 
-  const fetchResource = (params: Promise<any>) => {
+  const fetchResource = () => {
     loading.value = true
 
     return api(params)
@@ -14,10 +14,11 @@ export const useRequest = (api: any) => {
       .finally(() => loading.value = false)
   }
 
+  onMounted(() => fetchResource())
+
   return {
     loading,
     result,
     error,
-    fetchResource,
   }
 }

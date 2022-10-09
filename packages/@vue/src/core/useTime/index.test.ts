@@ -3,7 +3,7 @@ import { unref } from 'vue'
 import { useTime } from '.'
 
 describe('should', () => {
-  it('expect', () => {
+  it.skip('expect', () => {
     const date = unref(useTime()).toString().split(' ')[3] // year
     expect(date).toEqual((new Date()).getFullYear().toString())
   })
