@@ -6,9 +6,9 @@ export function useFormatDate(format = 'YYYY-MM-DD hh:mm:ss') {
   const [formatTime, setFormatTime] = useState('')
   const date = useTime()
 
-  useMemo(() => setFormatTime(day(date).format(format)), [formatTime])
+  useMemo(() => setFormatTime(day(date).format(format)), [date])
 
-  // useEffect(() => setFormatTime(day(date).format(format)), [])
+  // useEffect(() => setFormatTime(day(date).format(format)), [date])
 
   return formatTime
 }
