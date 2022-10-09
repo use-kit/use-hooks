@@ -1,16 +1,20 @@
 import { useTime, useFormatDate } from '@use-kit/react-hooks'
+import { useFetchList } from './hooks'
 import './App.css'
 
 function App() {
   const time = useTime()
   const formateDate = useFormatDate()
-  console.log('format', formateDate)
+  // console.log('format', formateDate)
+
+  const { loading, list } = useFetchList((x: number) => x < 3)
 
   return (
     <div className="App">
       react test
       <div>time: { time.toString() }</div>
       <div>format: { formateDate }</div>
+      <div>request: { loading ? 'Loading...' : list }</div>
     </div>
   )
 }
