@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 
-export function useRequest(api: any, params?: any) {
+export function useRequest(api: Function, params?: unknown) {
   const [loading, setLoading] = useState(false)
   const [result, setResult] = useState(null)
   const [error, setError] = useState(null)
@@ -9,8 +9,8 @@ export function useRequest(api: any, params?: any) {
     setLoading(true)
 
     return api(params)
-      .then((data: any) => setResult(data))
-      .catch((e: any) => setError(e))
+      .then((data: Extract<unknown, null>) => setResult(data))
+      .catch((e: Extract<Error, null>) => setError(e))
       .finally(() => setLoading(false))
   }
 

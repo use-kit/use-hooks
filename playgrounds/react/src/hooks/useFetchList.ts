@@ -7,7 +7,7 @@ function fetchList(callback?: Function) {
   }, 1000))
 }
 
-export function useFetchList(params: any) {
+export function useFetchList(params?: Function) {
   const { loading, result, error } = useRequest(fetchList, params)
 
   return {
