@@ -7,7 +7,7 @@ function App() {
   const formateDate = useFormatDate()
   // console.log('format', formateDate)
 
-  const { loading, list } = useFetchList((x: number) => x < 3)
+  const { loading, list } = useFetchList()
 
   return (
     <div className="App">

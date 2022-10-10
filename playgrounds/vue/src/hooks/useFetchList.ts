@@ -1,8 +1,8 @@
 import { useRequest } from '@use-kit/vue-hooks'
 
-function fetchList(callback: Function) {
+function fetchList(callback?: Function) {
   return new Promise(resolve => setTimeout(() => {
-    const ret = [1, 2, 3].filter(callback())
+    const ret = [1, 2, 3].filter((x: number) => callback ? callback(x) : x)
     resolve(ret)
   }, 1000))
 }

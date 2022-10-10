@@ -1,9 +1,9 @@
 import { useRequest } from '@use-kit/react-hooks'
 
-function fetchList(callback: Function) {
+function fetchList(callback?: Function) {
   return new Promise(resolve => setTimeout(() => {
-    // const ret = [1, 2, 3].filter(callback())
-    resolve([1, 2, 3])
+    const ret = [1, 2, 3].filter((x: number) => callback ? callback(x) : x)
+    resolve(ret)
   }, 1000))
 }
 
