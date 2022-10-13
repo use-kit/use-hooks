@@ -5,7 +5,7 @@ window client bounding rectangle listener.
 ## Usage
 
 ```ts
-import { useWindowClientRect } from '@use-kit/vue-hooks'
+import { useWindowClientRect } from '@use-kit/react-hooks'
 
 const ret = useWindowClientRect()
 ```
