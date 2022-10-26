@@ -3,9 +3,10 @@ import {
   useTime,
   useFormatDate,
   useRequest,
-  useWindowClientRect
+  useWindowClientRect,
+  useResizeObserver,
 } from '@use-kit/vue-hooks'
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 
 import { useFetchList } from './hooks'
 
@@ -14,14 +15,28 @@ const format = useFormatDate('YYYY-MM-DD hh:mm:ss a')
 const { loading, list } = useFetchList((x: number) => x < 3)
 const rect = useWindowClientRect()
 
+const el = ref(null)
+const text = ref('')
+
+onMounted(() => {
+  console.log('el: ', el)
+})
+
+useResizeObserver(el, entries => {
+  console.log('entries: ', entries)
+  const entry = entries[0]
+  const { width, height } = entry.contentRect
+  text.value = `width: ${width}, height: ${height}`
+})
 </script>
 
 <template>
-  <div>
+  <div ref="el">
     <div>vue test</div>
     <div>time: {{ time }}</div>
     <div>format: {{ format }}</div>
     <div>request: {{ loading ? 'Loading……' : list }}</div>
     <div>rect width: {{ rect.width }}, rect height: {{ rect.height }}</div>
+    <div>{{ text }}</div>
   </div>
 </template>
