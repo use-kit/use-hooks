@@ -1,4 +1,10 @@
-import { useTime, useFormatDate, useWindowClientRect } from '@use-kit/react-hooks'
+import { useRef, useState, useEffect } from 'react'
+import {
+  useTime,
+  useFormatDate,
+  useWindowClientRect,
+  useResizeObserver
+} from '@use-kit/react-hooks'
 import { useFetchList } from './hooks'
 import './App.css'
 
@@ -10,6 +16,15 @@ function App() {
   const { loading, list } = useFetchList()
   const rect = useWindowClientRect()
 
+  const el = useRef(null)
+  const [text, setText] = useState('')
+
+  useResizeObserver(el.current, entries => {
+    const [entry] = entries
+    const { width, height } = entry.contentRect
+    setText(`width: ${width} height: ${height}`)
+  })
+
   return (
     <div className="App">
       react test
@@ -17,6 +32,7 @@ function App() {
       <div>format: {formateDate}</div>
       <div>request: {loading ? 'Loading...' : list}</div>
       <div>rect width: {rect?.width}</div>
+      <textarea ref={el} disabled rows={3} cols={30} value={text} />
     </div>
   )
 }
