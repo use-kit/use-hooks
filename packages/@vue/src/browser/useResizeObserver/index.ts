@@ -1,9 +1,9 @@
-import { onMounted } from 'vue'
+import { watch } from 'vue'
 
 export const useResizeObserver = (target: Element, callback: ResizeObserverCallback) => {
-  onMounted(() => {
+  watch(target, (el) => {
     const observer: ResizeObserver = new ResizeObserver(callback)
 
-    observer.observe(target)
+    el && observer.observe(el)
   })
 }

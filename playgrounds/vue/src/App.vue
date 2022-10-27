@@ -18,25 +18,20 @@ const rect = useWindowClientRect()
 const el = ref(null)
 const text = ref('')
 
-onMounted(() => {
-  console.log('el: ', el)
-})
-
 useResizeObserver(el, entries => {
-  console.log('entries: ', entries)
-  const entry = entries[0]
+  const [entry] = entries
   const { width, height } = entry.contentRect
-  text.value = `width: ${width}, height: ${height}`
+  text.value = `width: ${width} height: ${height}`
 })
 </script>
 
 <template>
-  <div ref="el">
+  <div>
     <div>vue test</div>
     <div>time: {{ time }}</div>
     <div>format: {{ format }}</div>
     <div>request: {{ loading ? 'Loading……' : list }}</div>
     <div>rect width: {{ rect.width }}, rect height: {{ rect.height }}</div>
-    <div>{{ text }}</div>
+    <textarea ref="el" class="resizer" disabled v-text="text" />
   </div>
 </template>
