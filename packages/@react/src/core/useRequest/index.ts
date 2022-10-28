@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useMemo, useState } from 'react'
 
 export function useRequest(api: Function, params?: unknown) {
   const [loading, setLoading] = useState(false)

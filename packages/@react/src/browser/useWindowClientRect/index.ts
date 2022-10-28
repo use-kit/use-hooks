@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useMemo, useState } from 'react'
 
 export const useWindowClientRect = () => {
   const [rect, setRect] = useState(document.firstElementChild?.getBoundingClientRect())
