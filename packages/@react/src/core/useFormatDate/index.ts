@@ -1,5 +1,5 @@
 import day from 'dayjs'
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useTime } from '../'
 
 export function useFormatDate(format = 'YYYY-MM-DD hh:mm:ss') {
