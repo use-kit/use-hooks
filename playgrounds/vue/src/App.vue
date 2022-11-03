@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import {
-  useTime,
   useFormatDate,
   useRequest,
-  useWindowClientRect,
   useResizeObserver,
+  useTime,
+  useWindowClientRect,
 } from '@use-kit/vue-hooks'
 import { onMounted, ref } from 'vue'
 
@@ -18,7 +18,7 @@ const rect = useWindowClientRect()
 const el = ref(null)
 const text = ref('')
 
-useResizeObserver(el, entries => {
+useResizeObserver(el, (entries) => {
   const [entry] = entries
   const { width, height } = entry.contentRect
   text.value = `width: ${width} height: ${height}`

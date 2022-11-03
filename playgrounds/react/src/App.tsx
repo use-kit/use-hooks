@@ -1,9 +1,9 @@
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState } from 'react'
 import {
-  useTime,
   useFormatDate,
+  useResizeObserver,
+  useTime,
   useWindowClientRect,
-  useResizeObserver
 } from '@use-kit/react-hooks'
 import { useFetchList } from './hooks'
 import './App.css'
@@ -19,7 +19,7 @@ function App() {
   const el = useRef(null)
   const [text, setText] = useState('')
 
-  useResizeObserver(el.current, entries => {
+  useResizeObserver(el.current, (entries) => {
     const [entry] = entries
     const { width, height } = entry.contentRect
     setText(`width: ${width} height: ${height}`)

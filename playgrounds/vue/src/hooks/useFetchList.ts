@@ -12,6 +12,7 @@ export function useFetchList(params?: Function) {
 
   return {
     loading,
+    error,
     list: result,
   }
 }
