@@ -1,8 +1,11 @@
 import { describe, expect, it } from 'vitest'
+import { renderHook } from '@testing-library/react'
 import { useFormatDate } from '.'
 
 describe('useFormatDate', () => {
-  it.skip('year', () => {
-    expect(useFormatDate('YYYY')).toEqual((new Date()).getFullYear().toString())
+  it('year', () => {
+    const { result } = renderHook(() => useFormatDate('YYYY'))
+
+    expect(result.current).toEqual((new Date()).getFullYear().toString())
   })
 })
