@@ -2,7 +2,7 @@
   "name": "@use-kit/vue-hooks",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm@7.9.0",
+  "packageManager": "pnpm@8.3.1",
   "description": "",
   "author": "Akashi Sai <akashi_sai@163.com>",
   "license": "MIT",
@@ -47,10 +47,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "dayjs": "^1.11.5",
-    "vue": "^3.2.39"
+    "dayjs": "^1.11.7",
+    "vue": "^3.2.47"
   },
   "devDependencies": {
-    "@vueuse/core": "^9.2.0"
+    "@vueuse/core": "^10.1.2"
   }
 }
