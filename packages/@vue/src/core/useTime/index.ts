@@ -12,7 +12,5 @@ export const useTime = () => {
     clearInterval(intervalId.value)
   })
 
-  // setInterval(() => now.value = new Date(), 1000)
-
   return now
 }

@@ -1,11 +1,12 @@
 # useFormatDate
 
-computed date
+Reactive current Format Date
 
 ## Usage
 
 ```ts
-import { useFormatDate } from '@use-kit/vue-hooks'
+import { useFormatDate } from '@use-kit/react-hooks'
 
-const ret = useFormatDate()
+const ret = useFormatDate() // default: YYYY-MM-DD hh:mm:ss
+const ret = useFormatDate('hh:mm:ss')
 ```

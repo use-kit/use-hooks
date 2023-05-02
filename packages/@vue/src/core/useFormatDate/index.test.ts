@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest'
 import { useFormatDate } from '.'
 
-describe('should', () => {
-  it.skip('exported', () => {
-    expect(useFormatDate('YYYY').value).toMatchInlineSnapshot('"2022"')
+describe('useFormateData', () => {
+  it('year', () => {
+    expect(useFormatDate('YYYY').value).toEqual((new Date()).getFullYear().toString())
   })
 })

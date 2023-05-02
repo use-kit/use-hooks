@@ -1,11 +1,11 @@
 # useRequest
 
-request api ref.
+Fetch data with more complete logic
 
 ## Usage
 
 ```ts
 import { useRequest } from '@use-kit/react-hooks'
 
-const ret = useRequest()
+const { loading, result, error } = useRequest(fetch('api/data'))
 ```

@@ -1,6 +1,6 @@
 # useTime
 
-computed now date
+Reactive current Date
 
 ## Usage
 
