@@ -1,4 +1,5 @@
-import { watch } from 'vue'
+import type { Ref } from 'vue'
+import { onUnmounted, unref, watch } from 'vue'
 
 interface Options {
   root: Element | Document
@@ -7,19 +8,20 @@ interface Options {
 }
 
 export const useIntersectionObserver = (
-  target: Element | Document,
+  target: Ref<HTMLDivElement | Document | undefined>,
   callback: IntersectionObserverCallback,
   params?: Partial<Options>,
 ) => {
-  watch(target, (el) => {
-    const options: Options = {
-      root: el,
-      rootMargin: params?.rootMargin ?? '0px',
-      threshold: params?.threshold ?? 1.0,
-    }
+  const options: Options = {
+    root: unref(target as unknown as Element),
+    rootMargin: params?.rootMargin ?? '0px',
+    threshold: params?.threshold ?? 1.0,
+  }
+  const observer: IntersectionObserver = new IntersectionObserver(callback, options)
 
-    const observer: IntersectionObserver = new IntersectionObserver(callback, options)
-
+  watch(target as Ref<Element>, (el: Element) => {
     el && observer.observe(el as Element)
   })
+
+  onUnmounted(() => observer.disconnect())
 }

@@ -7,12 +7,15 @@ Provides a way to asynchronously observe changes in the intersection of a target
 ```ts
 import { useIntersectionObserver } from '@use-kit/vue-hooks'
 
-const el = ref<Element>()
+const el = ref<HTMLDivElement>()
 
-useIntersectionObserver(el as any, (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
-  console.log('entries', entries)
-  console.log('observer', observer)
-})
+useIntersectionObserver(
+  el,
+  (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+    console.log('entries', entries)
+    console.log('observer', observer)
+  }
+)
 ```
 
 ```html

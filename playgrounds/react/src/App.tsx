@@ -1,4 +1,5 @@
-import { useRef, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
+import chalk from 'chalk'
 import {
   useFormatDate,
   useIntersectionObserver,
@@ -13,7 +14,6 @@ import './App.css'
 function App() {
   const time = useTime()
   const formateDate = useFormatDate()
-  // console.log('format', formateDate)
 
   const { loading, list } = useFetchList()
   const rect = useWindowClientRect()
@@ -30,26 +30,28 @@ function App() {
   const mutateEl = useRef<HTMLDivElement>(null)
 
   useMutationObserver(
-    mutateEl.current as any,
+    mutateEl.current,
     (mutations: MutationRecord[], observer: MutationObserver) => {
-      console.log('mutations', mutations)
-      console.log('observer', observer)
+      console.log(chalk.green('mutations'), mutations)
+      console.log(chalk.green('observer'), observer)
     },
   )
 
-  // setTimeout(() => {
-  //   mutateEl.current?.setAttribute('style', 'background: yellow')
+  useMemo(() => {
+    setTimeout(() => {
+      mutateEl.current?.setAttribute('style', 'color: yellow')
 
-  //   setTimeout(() => {
-  //     mutateEl.current?.setAttribute('style', '')
-  //   }, 2000)
-  // }, 1000)
+      setTimeout(() => {
+        mutateEl.current?.setAttribute('style', '')
+      }, 1000)
+    }, 1000)
+  }, [mutateEl.current])
 
   const intersectEl = useRef<HTMLDivElement>(null)
 
   useIntersectionObserver(intersectEl.current as any, (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
-    console.log('entries', entries)
-    console.log('observer', observer)
+    console.log(chalk.cyan('entries'), entries)
+    console.log(chalk.cyan('observer'), observer)
   })
 
   return (

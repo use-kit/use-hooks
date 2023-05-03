@@ -11,9 +11,11 @@ export const useMutationObserver = (
     childList: true,
   },
 ) => {
-  useMemo(() => {
-    const observer: MutationObserver = new MutationObserver(callback)
+  const observer: MutationObserver = new MutationObserver(callback)
 
+  useMemo(() => {
     target && observer.observe(target, options)
+
+    return () => observer.disconnect()
   }, [target])
 }

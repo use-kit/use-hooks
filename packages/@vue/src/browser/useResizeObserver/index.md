@@ -7,7 +7,7 @@ Reports changes to the dimensions of an Element's content or border box, or the 
 ```ts
 import { useResizeObserver } from '@use-kit/vue-hooks'
 
-const el = ref(null)
+const el = ref<HTMLDivElement>()
 const text = ref('')
 
 useResizeObserver(el, (entries) => {
@@ -19,6 +19,6 @@ useResizeObserver(el, (entries) => {
 
 ```html
 <template>
-  <textarea ref="el" class="resizer" disabled v-text="text" />
+  <textarea ref="el" disabled v-text="text" />
 </template>
 ```

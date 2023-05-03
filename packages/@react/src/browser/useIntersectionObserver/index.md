@@ -17,6 +17,16 @@ useIntersectionObserver(
   }
 )
 
+useMemo(() => {
+  setTimeout(() => {
+    el.current?.setAttribute('style', 'color: yellow')
+
+    setTimeout(() => {
+      el.current?.setAttribute('style', '')
+    }, 1000)
+  }, 1000)
+}, [el.current])
+
 return (
   <div>
     <div ref={el} />

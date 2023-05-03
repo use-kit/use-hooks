@@ -7,10 +7,10 @@ Provides the ability to watch for changes being made to the `DOM` tree
 ```ts
 import { useMutationObserver } from '@use-kit/vue-hooks'
 
-const el = ref<Element>()
+const el = ref<HTMLDivElement>()
 
 useMutationObserver(
-  el.current as any,
+  el,
   (mutations: MutationRecord[], observer: MutationObserver) => {
     console.log('mutations', mutations)
     console.log('observer', observer)
@@ -22,7 +22,7 @@ setTimeout(() => {
 
   setTimeout(() => {
     el.current?.setAttribute('style', '')
-  }, 2000)
+  }, 1000)
 }, 1000)
 ```
 

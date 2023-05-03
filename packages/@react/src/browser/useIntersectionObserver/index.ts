@@ -11,15 +11,17 @@ export const useIntersectionObserver = (
   callback: IntersectionObserverCallback,
   params?: Partial<Options>,
 ) => {
+  const options: Options = {
+    root: target,
+    rootMargin: params?.rootMargin ?? '0px',
+    threshold: params?.threshold ?? 1.0,
+  }
+
+  const observer: IntersectionObserver = new IntersectionObserver(callback, options)
+
   useMemo(() => {
-    const options: Options = {
-      root: target,
-      rootMargin: params?.rootMargin ?? '0px',
-      threshold: params?.threshold ?? 1.0,
-    }
-
-    const observer: IntersectionObserver = new IntersectionObserver(callback, options)
-
     target && observer.observe(target)
+
+    return () => observer.disconnect()
   }, [target])
 }

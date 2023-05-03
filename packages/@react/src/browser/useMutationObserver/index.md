@@ -18,11 +18,11 @@ useMutationObserver(
 )
 
 setTimeout(() => {
-  el.current?.setAttribute('style', 'background: yellow')
+  el.current?.setAttribute('style', 'color: yellow')
 
   setTimeout(() => {
     el.current?.setAttribute('style', '')
-  }, 2000)
+  }, 1000)
 }, 1000)
 
 return (

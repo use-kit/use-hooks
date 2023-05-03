@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import chalk from 'chalk'
 import {
   useFormatDate,
   useIntersectionObserver,
@@ -16,35 +17,35 @@ const format = useFormatDate('YYYY-MM-DD hh:mm:ss a')
 const { loading, list } = useFetchList((x: number) => x < 3)
 const rect: DOMRect = useWindowClientRect()
 
-const resizeEl = ref<Element>()
+const resizeEl = ref<HTMLDivElement>()
 const text = ref('')
-useResizeObserver(resizeEl as any, (entries) => {
+useResizeObserver(resizeEl, (entries) => {
   const [entry] = entries
   const { width, height } = entry.contentRect
   text.value = `width: ${width} height: ${height}`
 })
 
-const mutateEl = ref<Element>()
+const mutateEl = ref<HTMLDivElement>()
 useMutationObserver(
-  mutateEl as any,
+  mutateEl,
   (mutations: MutationRecord[], observer: MutationObserver) => {
-    console.log('mutations', mutations)
-    console.log('observer', observer)
+    console.log(chalk.green('mutations'), mutations)
+    console.log(chalk.green('observer'), observer)
   },
 )
 
 setTimeout(() => {
-  mutateEl.value?.setAttribute('style', 'background: yellow')
+  mutateEl.value?.setAttribute('style', 'color: yellow')
 
   setTimeout(() => {
     mutateEl.value?.setAttribute('style', '')
-  }, 2000)
+  }, 1000)
 }, 1000)
 
-const intersectEl = ref<Element>()
-useIntersectionObserver(intersectEl as any, (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
-  console.log('entries', entries)
-  console.log('observer', observer)
+const intersectEl = ref<HTMLDivElement>()
+useIntersectionObserver(intersectEl, (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+  console.log(chalk.cyan('entries'), entries)
+  console.log(chalk.cyan('observer'), observer)
 })
 </script>
 
