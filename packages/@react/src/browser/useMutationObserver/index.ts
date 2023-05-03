@@ -5,7 +5,11 @@ interface Options extends MutationObserverInit {}
 export const useMutationObserver = (
   target: Element | null,
   callback: MutationCallback,
-  options: Options = {},
+  options: Options = {
+    attributes: true,
+    characterData: true,
+    childList: true,
+  },
 ) => {
   useMemo(() => {
     const observer: MutationObserver = new MutationObserver(callback)

@@ -4,13 +4,13 @@ Provides the ability to watch for changes being made to the `DOM` tree
 
 ## Usage
 
-```ts
-import { useMutationObserver } from '@use-kit/vue-hooks'
+```tsx
+import { useMutationObserver } from '@use-kit/react-hooks'
 
-const el = ref<Element>()
+const el = useRef<HTMLDivElement>(null)
 
 useMutationObserver(
-  el.current as any,
+  el.current,
   (mutations: MutationRecord[], observer: MutationObserver) => {
     console.log('mutations', mutations)
     console.log('observer', observer)
@@ -24,17 +24,10 @@ setTimeout(() => {
     el.current?.setAttribute('style', '')
   }, 2000)
 }, 1000)
-```
 
-```html
-<template>
-  <div ref="el" class="mutate" />
-</template>
-```
-
-```css
-.mutate {
-  width: 200px;
-  height: 200px;
-}
+return (
+  <div>
+    <div ref={el} />
+  </div>
+)
 ```
