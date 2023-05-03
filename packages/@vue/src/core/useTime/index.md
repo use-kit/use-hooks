@@ -9,3 +9,7 @@ import { useTime } from '@use-kit/vue-hooks'
 
 const ret = useTime()
 ```
+
+::: tip
+It is recommended to use [useFormatDate](../useFormatDate.html) instead.
+:::

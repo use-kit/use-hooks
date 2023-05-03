@@ -9,5 +9,5 @@ export const useWindowClientRect = () => {
     })
   })
 
-  return rect
+  return rect as unknown as DOMRect
 }
