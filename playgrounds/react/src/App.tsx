@@ -5,6 +5,7 @@ import {
   useIntersectionObserver,
   useMutationObserver,
   useResizeObserver,
+  useRerender,
   useTime,
   useWindowClientRect,
 } from '@use-kit/react-hooks'
@@ -54,6 +55,14 @@ function App() {
     console.log(chalk.cyan('observer'), observer)
   })
 
+  const { renderKey, rerender } = useRerender()
+  useMemo(() => {
+    setTimeout(() => {
+      rerender()
+      console.log(chalk.red('rerender'))
+    }, 2000)
+  }, [])
+
   return (
     <div ref={mutateEl} className="App">
       react test
@@ -65,6 +74,8 @@ function App() {
       <textarea ref={resizeEl} disabled rows={3} cols={30} value={text} />
 
       <div ref={intersectEl} />
+
+      <div key={renderKey} />
     </div>
   )
 }

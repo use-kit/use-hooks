@@ -6,6 +6,7 @@ import {
   useIntersectionObserver,
   useMutationObserver,
   useResizeObserver,
+  useRerender,
   useTime,
   useWindowClientRect,
 } from '@use-kit/vue-hooks'
@@ -47,6 +48,12 @@ useIntersectionObserver(intersectEl, (entries: IntersectionObserverEntry[], obse
   console.log(chalk.cyan('entries'), entries)
   console.log(chalk.cyan('observer'), observer)
 })
+
+const { renderKey, rerender } = useRerender()
+setTimeout(() => {
+  rerender()
+  console.log(chalk.red('rerender'))
+}, 2000)
 </script>
 
 <template>
@@ -60,5 +67,7 @@ useIntersectionObserver(intersectEl, (entries: IntersectionObserverEntry[], obse
     <textarea ref="resizeEl" class="resizer" disabled v-text="text" />
 
     <div ref="intersectEl" />
+
+    <div :key="renderKey" />
   </div>
 </template>
