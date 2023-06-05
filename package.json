@@ -15,6 +15,9 @@
   "bugs": "https://github.com/use-kit/use-hooks/issues",
   "keywords": [],
   "scripts": {
+    "clean": "rimraf packages/*/dist",
+    "cleanup": "rimraf 'packages/**/node_modules' 'playgrounds/**/node_modules' 'node_modules'",
+    "lint": "eslint .",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
   },
