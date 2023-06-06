@@ -4,8 +4,8 @@ import {
   useFormatDate,
   useIntersectionObserver,
   useMutationObserver,
-  useResizeObserver,
   useRerender,
+  useResizeObserver,
   useTime,
   useWindowClientRect,
 } from '@use-kit/react-hooks'
