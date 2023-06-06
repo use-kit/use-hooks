@@ -1,17 +1,17 @@
-# useIntersectionObserver
+# useElementRect
 
 Reactive element Rect
 
 ## Usage
 
-```tsx
+```ts
 import { useElementRect } from '@use-kit/react-hooks'
 
 const { domRef, domRect } = useElementRect()
+```
 
-return (
-  <div>
-    <div ref={domRef} />
-  </div>
-)
+```html
+<template>
+  <div ref="domRef" />
+</template>
 ```

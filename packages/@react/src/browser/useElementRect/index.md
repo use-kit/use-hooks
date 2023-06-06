@@ -1,25 +1,17 @@
-# useIntersectionObserver
+# useElementRect
 
-Provides a way to asynchronously observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport
+Reactive element Rect
 
 ## Usage
 
-```ts
-import { useIntersectionObserver } from '@use-kit/vue-hooks'
+```tsx
+import { useElementRect } from '@use-kit/vue-hooks'
 
-const el = ref<HTMLDivElement>()
+const { domRef, domRect } = useElementRect()
 
-useIntersectionObserver(
-  el,
-  (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
-    console.log('entries', entries)
-    console.log('observer', observer)
-  }
+return (
+  <div>
+    <div ref={domRef} />
+  </div>
 )
-```
-
-```html
-<template>
-  <div ref="el" />
-</template>
 ```
