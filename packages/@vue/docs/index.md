@@ -3,23 +3,23 @@
 layout: home
 
 hero:
-  name: "My Awesome Project"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  name: "Use Hooks"
+  text: Collection of Vue Composition Utilities
+  tagline: "A Collection of Utility Functions Based on Vue Composition API"
+  image:
+    src: /use.svg
+    alt: UseHooks
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Get Started
+      link: /guide
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 💡 Intuitive
+    details: The API has been designed to provide a well-sample user experience.
+  - title: 🔑 Type Strong
+    details: Flexible programmatic APIs with full TypeScript typing.
+  - title: 🚀 Seamless migration
+    details: Works seamlessly with both Vue 3 and 2
 ---
 
