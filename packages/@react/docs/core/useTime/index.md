@@ -11,5 +11,5 @@ const ret = useTime()
 ```
 
 ::: tip
-It is recommended to use [useFormatDate](../useFormatDate.html) instead.
+It is recommended to use [useFormatDate](/core/useFormatDate/) instead.
 :::
