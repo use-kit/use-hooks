@@ -17,6 +17,8 @@
   "scripts": {
     "clean": "rimraf packages/*/dist",
     "cleanup": "rimraf 'packages/**/node_modules' 'playgrounds/**/node_modules' 'node_modules'",
+    "docs:build-react": "pnpm --filter @use-kit/react-hooks docs:build",
+    "docs:build-vue": "pnpm --filter @use-kit/vue-hooks docs:build",
     "lint": "eslint .",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
