@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "Use Hooks"
+  name: "Use Vue Hooks"
   text: Collection of Vue Composition Utilities
   tagline: "A Collection of Utility Functions Based on Vue Composition API"
   image:

@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: "Use Hooks"
+  name: "Use React Hooks"
   text: Collection of React Hook Utilities
   tagline: "A Collection of Utility Functions Based on React Hook API"
   image:
