@@ -44,13 +44,20 @@
     "release": "bumpp && npm publish",
     "start": "esno packages/index.ts",
     "test": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
     "dayjs": "^1.11.7",
     "vue": "^3.2.47"
   },
   "devDependencies": {
-    "@vueuse/core": "^10.1.2"
+    "@use-kit/node": "^0.0.1",
+    "@vueuse/core": "^10.1.2",
+    "fast-glob": "^3.3.1",
+    "mkdirp": "^3.0.1",
+    "vitepress": "1.0.0-beta.6"
   }
 }
