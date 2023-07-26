@@ -1,17 +1,17 @@
 # UseHooks
 
-🦄 A collection of utility functions based on Composition API.
+👻 A collection of utility functions based on Vue Composition API.
 
-[![NPM version](https://img.shields.io/npm/v/@use-kit/react-hooks?color=a1b858&label=)](https://www.npmjs.com/package/@use-kit/react-hooks)
+[![NPM version](https://img.shields.io/npm/v/@use-kit/vue-hooks?color=a1b858&label=)](https://www.npmjs.com/package/@use-kit/vue-hooks)
 
 ## Usage
 
 ```shell
-pnpm i @use-kit/react-hooks
+pnpm i @use-kit/vue-hooks
 ```
 
 ```ts
-import { useSomethingHook } from '@use-kit/react-hooks'
+import { useSomethingHook } from '@use-kit/vue-hooks'
 
 useSomethingHook()
 ```

@@ -19,7 +19,10 @@ features:
     details: The API has been designed to provide a well-sample user experience.
   - title: 🔑 Type Strong
     details: Flexible programmatic APIs with full TypeScript typing.
-  - title: 🚀 Seamless migration
-    details: Works seamlessly with both Vue 3 and 2
+  - title: 💪 Robust Code
+    details: Improve code maintainability and reusability.
+  - title: ⭐️ Best Readability
+    details: Reduce code complexity, improve readability and maintainability.
+  - title: 🚀 Scalable & Efficient
+    details: Easy to extend high-quality application code.
 ---
-

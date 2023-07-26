@@ -1,6 +1,6 @@
 # UseHooks
 
-🦄 A collection of utility functions based on Composition API.
+👻 A collection of utility functions based on React Hook API.
 
 [![NPM version](https://img.shields.io/npm/v/@use-kit/react-hooks?color=a1b858&label=)](https://www.npmjs.com/package/@use-kit/react-hooks)
 
