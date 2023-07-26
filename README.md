@@ -16,6 +16,8 @@ import { useSomething } from '@use-kit/vue-hooks'
 const ret = useSomething()
 ```
 
+Detailed interface reference document [VueHooks](https://use-vue-hooks.netlify.app/)
+
 ### In react
 
 ```shell
@@ -27,6 +29,8 @@ import { useSomething } from '@use-kit/react-hooks'
 
 const ret = useSomething()
 ```
+
+Detailed interface reference document [ReactHooks](https://use-react-hooks.netlify.app/)
 
 ## License
 
