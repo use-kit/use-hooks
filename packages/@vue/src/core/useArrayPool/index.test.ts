@@ -10,5 +10,12 @@ describe('useArrayPool', () => {
 
   it('should return an array pool', () => {
     expect(pool.value).toEqual([2, 3, 4])
+    expect(pool.value).toMatchInlineSnapshot(`
+      [
+        2,
+        3,
+        4,
+      ]
+    `)
   })
 })
